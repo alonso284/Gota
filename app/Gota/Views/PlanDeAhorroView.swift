@@ -17,10 +17,7 @@ struct PlanDeAhorroView: View {
         HStack{
             VStack(alignment:.leading){
                 VStack(alignment:.leading){
-                    Text("Control de flujo")
-                        .font(.title)
-                        .fontWeight(.bold)
-                        .padding(.leading)
+                   Spacer()
                     
                     ZStack(alignment: .leading) {
                         RoundedRectangle(cornerRadius: 14)
@@ -46,10 +43,7 @@ struct PlanDeAhorroView: View {
                     }.padding()
                 }
                 VStack(alignment:.leading,spacing: 30){
-                    Text("Control de flujo")
-                        .font(.title)
-                        .fontWeight(.bold)
-                        .padding(.leading)
+                    Spacer()
                     
                     ZStack(alignment: .leading) {
                         RoundedRectangle(cornerRadius: 14)
@@ -111,7 +105,7 @@ struct PlanDeAhorroView: View {
                 }.frame(maxHeight: 400).padding(.top)
                 Spacer()
                 ZStack{
-                    RoundedRectangle(cornerRadius: 14).fill(.quinary.opacity(0.4))
+                    
                     VStack{
                         HStack{
                             Text("Fecha de último mantenimiento")
@@ -146,6 +140,7 @@ struct PlanDeAhorroView: View {
             }
             
         }
+        .navigationTitle("Control de Flujo")
     }
 }
 

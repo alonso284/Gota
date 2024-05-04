@@ -4,7 +4,7 @@ import sqlite3
 import os
 
 
-# conn = sqlite3.connect('/Users/alonso284/Desktop/Gota_backend/water_network.db')
+# conn = sqlite3.connect('./water_network.db')
 # USE RELATIVE PATHS
 conn = sqlite3.connect('water_network.db')
 

@@ -1,6 +1,6 @@
 import Foundation
 
-let url = "http://147.182.130.216:5000"
+let url = "http://127.0.0.1:5000"
 
 
 class SubZoneViewModel: ObservableObject {

@@ -12,26 +12,41 @@ struct TinacoComponent: View {
     var Percentage: Int
 
     var body: some View {
+        
         VStack {
             ZStack(alignment: .top) {
-                RoundedRectangle(cornerRadius: 20)
-                    .fill(.quinary.opacity(0.4))
-                    .frame(minHeight: 0, maxHeight: .infinity)
+                // Background Image
+                Image("waterbody")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+                    .edgesIgnoringSafeArea(.all) // Ignore safe area to cover the entire screen with the image
+                    .cornerRadius(15)
+                    .shadow(radius: 4)
 
+                // Semi-transparent gray overlay
+                Color.black.opacity(0.2)
+                    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+                
+                // Content VStack
                 VStack(alignment: .center) {
+                    Spacer()
+                    Text("\(Percentage)%")
+                        .fontWeight(.heavy)
+                        .font(.system(size: 50))
+                        .foregroundStyle(.white)
+                    Spacer()
                     Text(TinacoNumber)
                         .font(.title)
-                        .fontWeight(.regular)
-                        .foregroundStyle(.secondary)
-
-                    Text("\(Percentage)%")
-                        .bold()
-                        .font(.system(size: 50))
-                }.padding()
-
-                
-            }.frame(width: 160,height: 160)
+                        .fontWeight(.bold)
+                        .foregroundStyle(.white)
+                    Spacer()
+                }
+                .padding()
+            }
+            .frame(width: 170, height: 170)
         }
+
     }
 }
 

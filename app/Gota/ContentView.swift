@@ -15,43 +15,31 @@ enum NavigationDestination {
 }
 
 struct ContentView: View {
-    
-
-//    @State private var navPath: [NavigationDestination] = []
-    @State var tab = 0
-
     var body: some View {
-        NavigationStack{
-            VStack {
-                if tab == 0 {
-                    PrincipalView()
-                } else if tab == 1 {
-                    PlanDeAhorroView()
-                        .padding()
-                } else if tab == 2 {
-                    PlanDeAhorro()
-                        .padding()
-                }
-            }.toolbar {
-                ToolbarItemGroup(placement: .topBarLeading) {
-                    Button("Dashboard"){
-                        tab = 0
-                    }
-                    .bold(tab == 0)
-                    Button("Administrador"){
-                        tab = 1
-                    }
-                    .bold(tab == 1)
-                    Button("Plan de ahorro"){
-                        tab = 2
-                    }
-                    .bold(tab == 2)
-                }
+        TabView {
+            NavigationView {
+                PrincipalView()
+                    .navigationTitle("Dashboard")
             }
+            .navigationViewStyle(StackNavigationViewStyle())
+            .tabItem { Label("Dashboard", systemImage: "chart.pie") }
+            
+            NavigationView {
+                PlanDeAhorroView()
+                    .navigationTitle("Control de Flujo")
+            }
+            .navigationViewStyle(StackNavigationViewStyle())
+            .tabItem { Label("Control de Flujo", systemImage: "pipe.and.drop.fill") }
+            
+            NavigationView {
+                PlanDeAhorro()
+                    .navigationTitle("Plan de Ahorro")
+            }
+            .navigationViewStyle(StackNavigationViewStyle())
+            .tabItem { Label("Plan de Ahorro", systemImage: "spigot") }
         }
     }
 }
-
 
 #Preview {
     ContentView()

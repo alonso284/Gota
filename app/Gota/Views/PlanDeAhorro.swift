@@ -17,9 +17,7 @@ struct PlanDeAhorro: View {
         HStack {
             VStack {
                 ZStack(alignment: .top) {
-                    RoundedRectangle(cornerRadius: 20)
-                        .fill(.quinary.opacity(0.4))
-                    
+                   
                     VStack(alignment: .leading) {
                         Text("Control de zonas para hoy")
                             .font(.title)
@@ -64,20 +62,21 @@ struct PlanDeAhorro: View {
                         .font(.title)
                         .bold()
                         .padding(.vertical)
-                    HStack(spacing: 30){
+                    HStack(spacing: 20){
                         TinacoComponent(TinacoNumber: "Tinaco 01", Percentage: 30)
-                        
-                        TinacoComponent(TinacoNumber: "Tinaco 01", Percentage: 30)
-                        TinacoComponent(TinacoNumber: "Tinaco 01", Percentage: 30)
-                        TinacoComponent(TinacoNumber: "Tinaco 01", Percentage: 30)
+                        TinacoComponent(TinacoNumber: "Tinaco 02", Percentage: 50)
+                        TinacoComponent(TinacoNumber: "Tinaco 03", Percentage: 60)
+                        TinacoComponent(TinacoNumber: "Tinaco 04", Percentage: 90)
                     }
                     
+                    
                 }.frame(height: 300)
+                    
+                    
+                    
             }
 
             ZStack(alignment:.topLeading) {
-                RoundedRectangle(cornerRadius: 20)
-                .fill(.quinary.opacity(0.4))
                 VStack{
                     Text("Notificaciones")
                         .font(.title)
@@ -101,6 +100,7 @@ struct PlanDeAhorro: View {
                 }.padding()
             }.frame(width: 400)
         }
+        .navigationTitle("Control de fsjfsjk")
     }
 }
 

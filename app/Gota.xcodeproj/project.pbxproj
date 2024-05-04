@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A92D20372BE4634100A711D0 /* SequiaNotifComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92D20362BE4634100A711D0 /* SequiaNotifComponent.swift */; };
+		A92D20392BE4638F00A711D0 /* ConsumoComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92D20382BE4638F00A711D0 /* ConsumoComponent.swift */; };
 		FB10EA8B2B9DCBBF0087B60F /* Valve.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB10EA8A2B9DCBBF0087B60F /* Valve.swift */; };
 		FB4C8FDE2B9D00F700D89048 /* GotaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4C8FDD2B9D00F700D89048 /* GotaApp.swift */; };
 		FB4C8FE02B9D00F700D89048 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4C8FDF2B9D00F700D89048 /* ContentView.swift */; };
@@ -26,6 +28,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A92D20362BE4634100A711D0 /* SequiaNotifComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequiaNotifComponent.swift; sourceTree = "<group>"; };
+		A92D20382BE4638F00A711D0 /* ConsumoComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsumoComponent.swift; sourceTree = "<group>"; };
 		FB1032592B9DC5BF00C9A3D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		FB10EA8A2B9DCBBF0087B60F /* Valve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Valve.swift; sourceTree = "<group>"; };
 		FB4C8FDA2B9D00F700D89048 /* Gota.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gota.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -102,6 +106,8 @@
 			isa = PBXGroup;
 			children = (
 				FBC26CAC2B9D9C4B00C7E854 /* TinacoComponent.swift */,
+				A92D20362BE4634100A711D0 /* SequiaNotifComponent.swift */,
+				A92D20382BE4638F00A711D0 /* ConsumoComponent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -215,11 +221,13 @@
 				FBC26CAD2B9D9C4B00C7E854 /* TinacoComponent.swift in Sources */,
 				FBFD99C92B9D71F900B91A46 /* PredictorDeFugas.mlmodel in Sources */,
 				FBFD99CF2B9D747400B91A46 /* PredicitionModel.swift in Sources */,
+				A92D20392BE4638F00A711D0 /* ConsumoComponent.swift in Sources */,
 				FBC26CAF2B9DA89F00C7E854 /* PlanDeAhorroView.swift in Sources */,
 				FBFD99CD2B9D729700B91A46 /* PredictionViewModel.swift in Sources */,
 				FB4C8FE22B9D00F700D89048 /* Item.swift in Sources */,
 				FBFD99C52B9D178200B91A46 /* PrincipalViewModel.swift in Sources */,
 				FB10EA8B2B9DCBBF0087B60F /* Valve.swift in Sources */,
+				A92D20372BE4634100A711D0 /* SequiaNotifComponent.swift in Sources */,
 				FB4C8FDE2B9D00F700D89048 /* GotaApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -279,7 +287,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -336,7 +344,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -354,7 +362,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Gota/Preview Content\"";
-				DEVELOPMENT_TEAM = 4R4PJK8UFG;
+				DEVELOPMENT_TEAM = TCBXDWFNX2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Gota/Info.plist;
@@ -362,13 +370,13 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = alonso284.Gota;
+				PRODUCT_BUNDLE_IDENTIFIER = Gota.vainilla;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -386,7 +394,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Gota/Preview Content\"";
-				DEVELOPMENT_TEAM = 4R4PJK8UFG;
+				DEVELOPMENT_TEAM = TCBXDWFNX2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Gota/Info.plist;
@@ -394,13 +402,13 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = alonso284.Gota;
+				PRODUCT_BUNDLE_IDENTIFIER = Gota.vainilla;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
