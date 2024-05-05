@@ -1,86 +1,116 @@
+//
+//  PlanDeAhorro.swift
+//  Gota
+//
+//  Created by Alumno on 10/03/24.
+//
+
 import SwiftUI
 
 struct PlanDeAhorroView: View {
-    @State private var valvePressure: Double = 1.96
-    @State private var isValveOn: Bool = false
+    @State private var speed = 50.0
+    @State private var spee2 = 50.0
     @State private var isEditing = false
-    @State private var zonaValue = 1
-    
-    @StateObject var valve = ValveController()
-    
-    var body: some View {
-        HStack(spacing:0){
-            HStack {
-                Form {
-                    Section(header: Text("Zona")) {
-                        Picker("Seleccione la zona", selection: $zonaValue) {
-                            Text("General").tag(1)
-                            Text("Torre 1").tag(2)
-                            Text("Torre 2").tag(3)
-                        }.pickerStyle(SegmentedPickerStyle())
-                    }
-                    
-                    
-                    Section(header:Text("Nivel de presión")){
-                        ZStack(alignment: .topLeading){
-                            VStack(alignment: .leading){
-                                Text("\(String(format:"%.2f", $valvePressure.wrappedValue)) kg/cm²").font(.system(size: 40)).frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .center)
-                                Slider(value: $valvePressure, in: 0...6) { editing in
-                                    isEditing = editing
-                                    
-                                }.padding()
-                            }
-                        }.padding()
-                        
-                    }
-                }
-                .padding(0)
-                .scrollDisabled(true)
-                    
-                
-                Form {
-                    Section(header: Text("Visualización de tubería")) {
-                        Image("GotaPlanDeAhorro")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(maxWidth: .infinity, alignment: .center)
-                            .padding(.vertical)
-                    }
-                    
-                    Section(header: Text("Detalles de tubería")) {
-                        DetailView(title: "Fecha de último mantenimiento", value: "2024-02-18")
-                        DetailView(title: "Fecha de instalación", value: "2024-01-01")
-                      
-                        DetailView(title: "Material", value: "Cobre")
-                      
-                        DetailView(title: "Prioridad", value: "1")
-                    }
-                }
-                .scrollDisabled(true)
-            }
-            .navigationTitle("Control de Flujo")
-        }
-        .background(Color("systemBackground"))
-    }
-}
+    @StateObject private var viewModel = PredicionViewModel()
 
-struct DetailView: View {
-    var title: String
-    var value: String
-    
     var body: some View {
         HStack {
-            Text(title)
-                .bold()
-            Spacer()
-            Text(value)
+            VStack {
+                ZStack(alignment: .top) {
+                   
+                    VStack(alignment: .leading) {
+                        Text("Control de zonas para hoy")
+                            .font(.title)
+                            .bold()
+                            .padding(.vertical)
+                            .padding(.leading)
+
+                        Text("Basado en el consumo de las zonas de Nuevo Norte, es recomendable dejar en los niveles sugeridos para una mejor experiencia. Podrás efectuar cambios \ndesde esta interfaz.")
+                            .font(.title2)
+                            .foregroundColor(.secondary)
+                            .padding([.bottom])
+                            .padding(.leading)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+
+                        VStack {
+                            HStack {
+                                Text("Zona 1")
+                                    .fontWeight(.light)
+                                Slider(value: $speed, in: 0...100) { editing in
+                                    isEditing = editing
+                                }
+                            }
+                            .padding(.vertical)
+                            
+                            
+                            HStack {
+                                Text("Zona 2")
+                                    .fontWeight(.light)
+                                Slider(value: $spee2, in: 0...100) { editing in
+                                    isEditing = editing
+                                }
+                            }
+                            .padding(.bottom)
+                        }
+                        .padding(.leading)
+                        
+                        HStack {
+                            Spacer()
+                            Button("Guardar cambios") {}
+                                .buttonStyle(.borderedProminent).bold()
+                        }
+                        
+                    }
+                    
+                }
+
+                VStack (alignment: .leading){
+                    Text("Niveles del agua")
+                        .font(.title)
+                        .bold()
+                        .padding(.vertical)
+                    HStack(spacing: 20){
+                        TinacoComponent(TinacoNumber: "Tinaco 01", Percentage: 30)
+                        TinacoComponent(TinacoNumber: "Tinaco 02", Percentage: 50)
+                        TinacoComponent(TinacoNumber: "Tinaco 03", Percentage: 60)
+                        TinacoComponent(TinacoNumber: "Tinaco 04", Percentage: 90)
+                    }                    
+                }
+                .frame(height: 300)
+                
+                    
+                    
+                    
+            }
+
+            ZStack(alignment:.topLeading) {
+                VStack{
+                    Text("Notificaciones")
+                        .font(.title)
+                        .bold()
+                        .padding(.vertical)
+                    List {
+                        ForEach(viewModel.sensorData.filter { $0.category == "slow" }, id: \.sensor_id) { sensor in
+                            VStack (alignment: .leading){
+                                Text("Fuga Detectada ").bold()
+                                Text("\(sensor.zone ?? "NaN") \(sensor.subzone ?? "NaN")")
+                                Text("Haz click aquí para cerrar válvula, y notificar a inquilinos.").foregroundStyle(.secondary)
+                            }
+                            
+                        }
+                    }.listStyle(.automatic)
+                    .onAppear {
+                        print("loading sensor")
+                        viewModel.fetchSensorData()
+                    }.scrollContentBackground(.hidden)
+
+                }.padding()
+            }.frame(width: 400)
         }
-        .padding(.vertical)
+        .navigationTitle("Plan de Ahorro")
     }
 }
 
-struct PlanDeAhorroView_Previews: PreviewProvider {
-    static var previews: some View {
-        PlanDeAhorroView()
-    }
+#Preview {
+    PlanDeAhorroView()
 }
