@@ -15,11 +15,11 @@ def water_leakage_per_day():
         INNER JOIN FlowMeterOutputLog AS fmol
             ON DATE(fmil.timestamp) = DATE(fmol.timestamp)
         WHERE
-            fmil.timestamp >= DATETIME('now', '-14 days')
-            AND fmol.timestamp >= DATETIME('now', '-14 days')
-            AND fmil.meter_id = "G1P0"
+            fmil.meter_id = "G1P0"
         GROUP BY DATE(fmil.timestamp)
         """))
+            # AND fmil.timestamp >= DATETIME('now', '-14 days')
+            # AND fmol.timestamp >= DATETIME('now', '-14 days')
     
     info = list()
     for row in result.fetchall():
@@ -47,11 +47,11 @@ def water_leakage():
             ON fmil.meter_id = fmol.meter_id
         LEFT JOIN Valve AS vl
             ON vl.valve_id = fmil.meter_id
-        WHERE
-            fmil.timestamp >= DATETIME('now', '-30 days')
-            AND fmol.timestamp >= DATETIME('now', '-30 days')
         GROUP BY fmil.meter_id, vl.subzone_id
         """))
+        # WHERE
+        #     fmil.timestamp >= DATETIME('now', '-30 days')
+        #     AND fmol.timestamp >= DATETIME('now', '-30 days')
     
    
     info = {row[4]:{
@@ -541,9 +541,9 @@ def vibration():
         ON v.subzone_id  = s.subzone_id 
         LEFT JOIN Zone z
         ON s.zone_id = z.zone_id 
-        WHERE vsl."timestamp" >= DATETIME('now', '-60 days')
         GROUP BY vsl.sensor_id;
         """))
+        # WHERE vsl."timestamp" >= DATETIME('now', '-60 days')
 
     info = []
     for row in result.fetchall():
