@@ -1,6 +1,6 @@
 import Foundation
 
-let device_address = "http://127.0.0.1:5000"
+let device_address = "http://137.184.90.155:5000"
 
 class ValveController: ObservableObject {
     @Published var closed = true

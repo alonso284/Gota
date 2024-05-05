@@ -9,7 +9,9 @@ import SwiftUI
 
 struct GotasTotales: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text("Gotas totales").font(.title).padding(.top).bold()
+        Text("11").font(.title).foregroundStyle(Color.blue)
+        Spacer()
     }
 }
 
