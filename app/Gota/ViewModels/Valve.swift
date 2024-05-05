@@ -1,5 +1,5 @@
 import Foundation
-
+// donde se pone el url de donde se hostea lo de NodeMCU
 let device_address = "http://127.0.0.1:5000"
 
 class ValveController: ObservableObject {

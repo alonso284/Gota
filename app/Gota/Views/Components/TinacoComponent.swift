@@ -27,6 +27,7 @@ struct TinacoComponent: View {
                 // Semi-transparent gray overlay
                 Color.black.opacity(0.2)
                     .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+                    .cornerRadius(15)
                 
                 // Content VStack
                 VStack(alignment: .center) {
