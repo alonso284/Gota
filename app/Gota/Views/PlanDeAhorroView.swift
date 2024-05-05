@@ -9,7 +9,6 @@ struct PlanDeAhorroView: View {
     @StateObject var valve = ValveController()
     
     var body: some View {
-        
         HStack(spacing:0){
             HStack {
                 Form {
@@ -34,7 +33,10 @@ struct PlanDeAhorroView: View {
                         }.padding()
                         
                     }
-                }.padding(0)
+                }
+                .padding(0)
+                .scrollDisabled(true)
+                    
                 
                 Form {
                     Section(header: Text("Visualización de tubería")) {
@@ -54,6 +56,7 @@ struct PlanDeAhorroView: View {
                         DetailView(title: "Prioridad", value: "1")
                     }
                 }
+                .scrollDisabled(true)
             }
             .navigationTitle("Control de Flujo")
         }
