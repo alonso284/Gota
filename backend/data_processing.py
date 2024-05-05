@@ -229,9 +229,6 @@ def pipes():
 
     return pipes_dict
 
-# GET THE ZONES IN WHICH EACH WATER INPUT IS SUPPLYING TO
-# CHECK EACH WATER INPUT OUTPUT PIPE AND CHECK THE SUBZONE OF THE VALVE
-# AN ERROR OCCURS IF THERE IS NO VALVE CONNECTED TO THE PIPE
 def water_input_zone():
     water_inputs = WaterInput.query.all()
 
@@ -249,9 +246,6 @@ def water_input_zone():
         return water_input_zone
 
 
-# A SUBZONE MARKER IS A JUNCTION THAT INPUT PIPE IS CONNECTED TO A VALVE
-# AN ERROR OCCURS IF A PIPE IS ZONE MARKER FOR MORE THAT ONE SUBZONE
-    
 # TODO CHECK FOR ERROR CONDITIONS
 def load_subzone_markers():
     valves = Valve.query.all()
@@ -267,17 +261,6 @@ def load_subzone_markers():
 
     return subzone_markers
 
-"""
-"G1J0": {
-        "name": "Salida de Agua",
-        "priority": 1,
-        "subzone_id": "G1F0",
-        "zone": {
-            "name": "General",
-            "zone_id": "G1"
-        }
-    },
-"""
 def subzone_markers():
     markers = load_subzone_markers()
     res = []
@@ -342,30 +325,6 @@ def init_dfs():
 
     return node_zones, node_map, pipe_map, water_input_zones, subzone_markers, child_zone, tank_zone
 
-""" water system
-{
-    "waterinputs":
-    [
-        {
-            "water_input_id": string,
-            "zones": [
-                "zone_id": string,
-                "water_storage": {
-                    "zone_id": string,
-                    "capacity": double,
-                    "level": double
-                },
-                "subzones": [
-                    {
-                        "subzone_id": string,
-                        "zone_id": string,
-                    }
-            ],
-
-        }
-    ]
-}
-"""
 def resume():
     (node_zones, node_map, pipe_map, water_input_zones, zone_markers, child_zone, tank_zone) = init_dfs()
 
@@ -430,55 +389,6 @@ def resume():
 
     return {"watersystem": resume}
 
-"""
- {
-        "diameter": 1.0,
-        "flow_meter_tuple": {
-            "meter_input": {
-                "installation_date": "Mon, 01 Jan 2024 00:00:00 GMT",
-                "meter_id": "G1P0",
-                "revised_date": null
-            },
-            "meter_output": {
-                "installation_date": "Mon, 01 Jan 2024 00:00:00 GMT",
-                "meter_id": "G1P0",
-                "revised_date": null
-            },
-            "meter_tuple_id": "G1P0",
-            "water_input": 1304265.858016741,
-            "water_leaked": 65213.292900836794
-        },
-        "installation_date": "Mon, 01 Jan 2024 00:00:00 GMT",
-        "length": 100.0,
-        "material": {
-            "material_id": 0,
-            "name": "Cobre"
-        },
-        "pipe_id": "G1P0",
-        "revised_date": null,
-        "thickness": 0.2,
-        "valve": {
-            "installation_date": "Mon, 01 Jan 2024 00:00:00 GMT",
-            "mean_pressure": null,
-            "revised_date": null,
-            "subzone": {
-                "name": "Salida de Agua",
-                "priority": 1,
-                "subzone_id": "G1F0",
-                "zone": {
-                    "name": "General",
-                    "zone_id": "G1"
-                }
-            },
-            "valve_id": "G1P0"
-        },
-        "vibrator": {
-            "installation_date": "Mon, 01 Jan 2024 00:00:00 GMT",
-            "revised_date": null,
-            "sensor_id": "G1P0"
-        }
-    },
-"""
 def serial(serial_number):
     pipe = Pipe.query.filter_by(pipe_id=serial_number).first()
 
@@ -563,18 +473,6 @@ def vibration():
     return info
 
 
-"""
-"G1J0": {
-        "group": "junction",
-        "id": "G1J0",
-        "in_pipes": [
-            "G1P0"
-        ],
-        "out_pipes": [
-            "G1P1"
-        ]
-    },
-"""
 def maintview(subzone_id):
     (node_zones, nodes_map, pipe_map, water_input_zones, zone_markers, child_zone, tank_zone) = init_dfs()
 
