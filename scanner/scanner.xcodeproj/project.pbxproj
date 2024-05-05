@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		13CE62CB2BE849DE008108C9 /* scannerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CE62CA2BE849DE008108C9 /* scannerApp.swift */; };
 		13CE62CD2BE849DE008108C9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CE62CC2BE849DE008108C9 /* ContentView.swift */; };
-		13CE62CF2BE849DE008108C9 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CE62CE2BE849DE008108C9 /* Item.swift */; };
+		13CE62CF2BE849DE008108C9 /* Pipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CE62CE2BE849DE008108C9 /* Pipe.swift */; };
 		13CE62D12BE849E2008108C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13CE62D02BE849E2008108C9 /* Assets.xcassets */; };
 		13CE62D42BE849E2008108C9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13CE62D32BE849E2008108C9 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -18,9 +18,11 @@
 		13CE62C72BE849DE008108C9 /* scanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = scanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13CE62CA2BE849DE008108C9 /* scannerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = scannerApp.swift; sourceTree = "<group>"; };
 		13CE62CC2BE849DE008108C9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		13CE62CE2BE849DE008108C9 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		13CE62CE2BE849DE008108C9 /* Pipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pipe.swift; sourceTree = "<group>"; };
 		13CE62D02BE849E2008108C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		13CE62D32BE849E2008108C9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FB0A15582BE84C0B00D977DC /* scanner.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = scanner.entitlements; sourceTree = "<group>"; };
+		FB0A15592BE84C4E00D977DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,9 +55,11 @@
 		13CE62C92BE849DE008108C9 /* scanner */ = {
 			isa = PBXGroup;
 			children = (
+				FB0A15592BE84C4E00D977DC /* Info.plist */,
+				FB0A15582BE84C0B00D977DC /* scanner.entitlements */,
 				13CE62CA2BE849DE008108C9 /* scannerApp.swift */,
 				13CE62CC2BE849DE008108C9 /* ContentView.swift */,
-				13CE62CE2BE849DE008108C9 /* Item.swift */,
+				13CE62CE2BE849DE008108C9 /* Pipe.swift */,
 				13CE62D02BE849E2008108C9 /* Assets.xcassets */,
 				13CE62D22BE849E2008108C9 /* Preview Content */,
 			);
@@ -141,7 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13CE62CD2BE849DE008108C9 /* ContentView.swift in Sources */,
-				13CE62CF2BE849DE008108C9 /* Item.swift in Sources */,
+				13CE62CF2BE849DE008108C9 /* Pipe.swift in Sources */,
 				13CE62CB2BE849DE008108C9 /* scannerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -273,12 +277,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = scanner/scanner.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"scanner/Preview Content\"";
 				DEVELOPMENT_TEAM = 4R4PJK8UFG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = scanner/Info.plist;
+				INFOPLIST_KEY_NFCReaderUsageDescription = "Read Pipe Info";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -302,12 +309,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = scanner/scanner.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"scanner/Preview Content\"";
 				DEVELOPMENT_TEAM = 4R4PJK8UFG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = scanner/Info.plist;
+				INFOPLIST_KEY_NFCReaderUsageDescription = "Read Pipe Info";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
