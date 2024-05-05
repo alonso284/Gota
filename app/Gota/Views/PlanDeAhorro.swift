@@ -23,38 +23,45 @@ struct PlanDeAhorro: View {
                             .font(.title)
                             .bold()
                             .padding(.vertical)
+                            .padding(.leading)
 
                         Text("Basado en el consumo de las zonas de Nuevo Norte, es recomendable dejar en los niveles sugeridos para una mejor experiencia. Podrás efectuar cambios \ndesde esta interfaz.")
                             .font(.title2)
                             .foregroundColor(.secondary)
                             .padding([.bottom])
+                            .padding(.leading)
                             .frame(maxWidth: .infinity, alignment: .leading)
 
-                        HStack {
-                            Text("Zona 1")
-                                .fontWeight(.light)
-                            Slider(value: $speed, in: 0...100) { editing in
-                                isEditing = editing
+                        VStack {
+                            HStack {
+                                Text("Zona 1")
+                                    .fontWeight(.light)
+                                Slider(value: $speed, in: 0...100) { editing in
+                                    isEditing = editing
+                                }
                             }
-                        }
-                        .padding(.vertical)
-
-                        HStack {
-                            Text("Zona 2")
-                                .fontWeight(.light)
-                            Slider(value: $spee2, in: 0...100) { editing in
-                                isEditing = editing
+                            .padding(.vertical)
+                            
+                            
+                            HStack {
+                                Text("Zona 2")
+                                    .fontWeight(.light)
+                                Slider(value: $spee2, in: 0...100) { editing in
+                                    isEditing = editing
+                                }
                             }
+                            .padding(.bottom)
                         }
-                        .padding(.bottom)
-
+                        .padding(.leading)
+                        
                         HStack {
                             Spacer()
                             Button("Guardar cambios") {}
-                                .buttonStyle(.borderedProminent)
+                                .buttonStyle(.borderedProminent).bold()
                         }
+                        
                     }
-                    .padding()
+                    
                 }
 
                 VStack (alignment: .leading){
@@ -67,10 +74,10 @@ struct PlanDeAhorro: View {
                         TinacoComponent(TinacoNumber: "Tinaco 02", Percentage: 50)
                         TinacoComponent(TinacoNumber: "Tinaco 03", Percentage: 60)
                         TinacoComponent(TinacoNumber: "Tinaco 04", Percentage: 90)
-                    }
-                    
-                    
-                }.frame(height: 300)
+                    }                    
+                }
+                .frame(height: 300)
+                
                     
                     
                     
@@ -100,7 +107,7 @@ struct PlanDeAhorro: View {
                 }.padding()
             }.frame(width: 400)
         }
-        .navigationTitle("Control de fsjfsjk")
+        .navigationTitle("Plan de Ahorro")
     }
 }
 

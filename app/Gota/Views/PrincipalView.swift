@@ -131,16 +131,18 @@ struct PrincipalView: View {
                         .padding()
                         .padding()
                     
+                    
                    
                
                     VStack {
-                        SequiaNotifComponent()
-                        SequiaNotifComponent()
+                        SistemasTotalesComponent()
+                        GotasTotales()
                     }
                    
                     .padding(.top)
                     .padding(.top)
                     .cornerRadius(21)
+                    .padding(.horizontal,60)
                 }
                 
 
