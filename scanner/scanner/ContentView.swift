@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @Binding var id:String?
     @State private var pipeData: PipeData?
     @State private var loading = false
     @State private var errorMessage = String()
@@ -116,13 +117,20 @@ struct ContentView: View {
             }
         }
         .onOpenURL(perform: { url in
-            self.loading = true
-            
-            guard let id = url.host else {
-                self.errorMessage = "Failed to identify ID"
-                return
+            if let id = url.host {
+                self.id = id
+                print("ID detected: \(id)")
+            } else {
+                print("No ID found")
             }
-            
+        })
+        .onChange(of: self.id, loadPipeData)
+        .onAppear(perform: loadPipeData)
+    }
+    
+    func loadPipeData(){
+        self.loading = true
+        if let id = self.id {
             pipeDataManager.fetchPipeData(serialId: id) { pipeData in
                 if let pipeData = pipeData {
                     print("Fetched Pipe Data:")
@@ -133,12 +141,18 @@ struct ContentView: View {
                     self.errorMessage = "Failed to fetch Pipe Data"
                 }
             }
-            
-            self.loading = false
-        })
+        }
+        self.loading = false
+    }
+}
+
+struct Sample: View {
+    @State private var id: String? = nil
+    var body: some View {
+        ContentView(id: $id)
     }
 }
 
 #Preview {
-    ContentView()
+    Sample()
 }
