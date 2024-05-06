@@ -11,13 +11,14 @@
 		5EA7CC042BE72ABF0002C206 /* GotasTotales.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA7CC032BE72ABF0002C206 /* GotasTotales.swift */; };
 		A92D20372BE4634100A711D0 /* SequiaNotifComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92D20362BE4634100A711D0 /* SequiaNotifComponent.swift */; };
 		A92D20392BE4638F00A711D0 /* ConsumoComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92D20382BE4638F00A711D0 /* ConsumoComponent.swift */; };
+		A96CA93D2BE852000039DA69 /* ControlFlujoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96CA93C2BE852000039DA69 /* ControlFlujoView.swift */; };
+		A96CA93F2BE865C40039DA69 /* WeeklyUseComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96CA93E2BE865C40039DA69 /* WeeklyUseComponent.swift */; };
 		FB10EA8B2B9DCBBF0087B60F /* Valve.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB10EA8A2B9DCBBF0087B60F /* Valve.swift */; };
 		FB4C8FDE2B9D00F700D89048 /* GotaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4C8FDD2B9D00F700D89048 /* GotaApp.swift */; };
 		FB4C8FE02B9D00F700D89048 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4C8FDF2B9D00F700D89048 /* ContentView.swift */; };
 		FB4C8FE22B9D00F700D89048 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4C8FE12B9D00F700D89048 /* Item.swift */; };
 		FB4C8FE42B9D00F800D89048 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB4C8FE32B9D00F800D89048 /* Assets.xcassets */; };
 		FB4C8FE72B9D00F800D89048 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB4C8FE62B9D00F800D89048 /* Preview Assets.xcassets */; };
-		FBC26CA82B9D8CE400C7E854 /* PlanDeAhorro.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC26CA72B9D8CE400C7E854 /* PlanDeAhorro.swift */; };
 		FBC26CAD2B9D9C4B00C7E854 /* TinacoComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC26CAC2B9D9C4B00C7E854 /* TinacoComponent.swift */; };
 		FBC26CAF2B9DA89F00C7E854 /* PlanDeAhorroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC26CAE2B9DA89F00C7E854 /* PlanDeAhorroView.swift */; };
 		FBFD99BF2B9D0BD300B91A46 /* PrincipalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBFD99BE2B9D0BD300B91A46 /* PrincipalView.swift */; };
@@ -34,6 +35,8 @@
 		5EA7CC032BE72ABF0002C206 /* GotasTotales.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GotasTotales.swift; sourceTree = "<group>"; };
 		A92D20362BE4634100A711D0 /* SequiaNotifComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequiaNotifComponent.swift; sourceTree = "<group>"; };
 		A92D20382BE4638F00A711D0 /* ConsumoComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsumoComponent.swift; sourceTree = "<group>"; };
+		A96CA93C2BE852000039DA69 /* ControlFlujoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlFlujoView.swift; sourceTree = "<group>"; };
+		A96CA93E2BE865C40039DA69 /* WeeklyUseComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyUseComponent.swift; sourceTree = "<group>"; };
 		FB1032592B9DC5BF00C9A3D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		FB10EA8A2B9DCBBF0087B60F /* Valve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Valve.swift; sourceTree = "<group>"; };
 		FB4C8FDA2B9D00F700D89048 /* Gota.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gota.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -42,7 +45,6 @@
 		FB4C8FE12B9D00F700D89048 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		FB4C8FE32B9D00F800D89048 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FB4C8FE62B9D00F800D89048 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		FBC26CA72B9D8CE400C7E854 /* PlanDeAhorro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanDeAhorro.swift; sourceTree = "<group>"; };
 		FBC26CAC2B9D9C4B00C7E854 /* TinacoComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinacoComponent.swift; sourceTree = "<group>"; };
 		FBC26CAE2B9DA89F00C7E854 /* PlanDeAhorroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanDeAhorroView.swift; sourceTree = "<group>"; };
 		FBFD99BE2B9D0BD300B91A46 /* PrincipalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrincipalView.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				A92D20382BE4638F00A711D0 /* ConsumoComponent.swift */,
 				5EA7CC012BE7270B0002C206 /* SistemasTotalesComponent.swift */,
 				5EA7CC032BE72ABF0002C206 /* GotasTotales.swift */,
+				A96CA93E2BE865C40039DA69 /* WeeklyUseComponent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -121,10 +124,10 @@
 		FBFD99BD2B9D0BAD00B91A46 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A96CA93C2BE852000039DA69 /* ControlFlujoView.swift */,
 				FBFD99BE2B9D0BD300B91A46 /* PrincipalView.swift */,
 				FBFD99CA2B9D723900B91A46 /* PredictionView.swift */,
 				FBC26CAE2B9DA89F00C7E854 /* PlanDeAhorroView.swift */,
-				FBC26CA72B9D8CE400C7E854 /* PlanDeAhorro.swift */,
 				FBC26CA92B9D9BCA00C7E854 /* Components */,
 			);
 			path = Views;
@@ -220,7 +223,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FBFD99C22B9D175600B91A46 /* PrincipalModel.swift in Sources */,
-				FBC26CA82B9D8CE400C7E854 /* PlanDeAhorro.swift in Sources */,
 				FBFD99BF2B9D0BD300B91A46 /* PrincipalView.swift in Sources */,
 				FBFD99CB2B9D723900B91A46 /* PredictionView.swift in Sources */,
 				FB4C8FE02B9D00F700D89048 /* ContentView.swift in Sources */,
@@ -228,11 +230,13 @@
 				5EA7CC022BE7270B0002C206 /* SistemasTotalesComponent.swift in Sources */,
 				FBFD99C92B9D71F900B91A46 /* PredictorDeFugas.mlmodel in Sources */,
 				FBFD99CF2B9D747400B91A46 /* PredicitionModel.swift in Sources */,
+				A96CA93F2BE865C40039DA69 /* WeeklyUseComponent.swift in Sources */,
 				A92D20392BE4638F00A711D0 /* ConsumoComponent.swift in Sources */,
 				FBC26CAF2B9DA89F00C7E854 /* PlanDeAhorroView.swift in Sources */,
 				FBFD99CD2B9D729700B91A46 /* PredictionViewModel.swift in Sources */,
 				FB4C8FE22B9D00F700D89048 /* Item.swift in Sources */,
 				5EA7CC042BE72ABF0002C206 /* GotasTotales.swift in Sources */,
+				A96CA93D2BE852000039DA69 /* ControlFlujoView.swift in Sources */,
 				FBFD99C52B9D178200B91A46 /* PrincipalViewModel.swift in Sources */,
 				FB10EA8B2B9DCBBF0087B60F /* Valve.swift in Sources */,
 				A92D20372BE4634100A711D0 /* SequiaNotifComponent.swift in Sources */,
@@ -384,7 +388,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Gota.vainilla;
+				PRODUCT_BUNDLE_IDENTIFIER = Gota.project.Vainilla;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -416,7 +420,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Gota.vainilla;
+				PRODUCT_BUNDLE_IDENTIFIER = Gota.project.Vainilla;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;

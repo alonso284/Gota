@@ -9,9 +9,12 @@ import SwiftUI
 
 struct GotasTotales: View {
     var body: some View {
-        Text("Gotas totales").font(.title).padding(.top).bold()
-        Text("11").font(.title).foregroundStyle(Color.blue)
-        Spacer()
+        HStack{
+            Text("Gotas totales").font(.title3)
+            Spacer()
+            Text("11").foregroundStyle(Color.accentColor)
+        }
+        
     }
 }
 

@@ -9,10 +9,11 @@ import SwiftUI
 
 struct SistemasTotalesComponent: View {
     var body: some View {
-        
-        Text("Zonas totales").font(.title).padding(.top).bold()
-        Text("2").font(.title).foregroundStyle(Color.blue)
-        Spacer()
+        HStack{
+            Text("Zonas totales").font(.title3)
+            Spacer()
+            Text("2").foregroundStyle(Color.accentColor)
+        }
     }
 }
 

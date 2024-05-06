@@ -2,11 +2,12 @@ import SwiftUI
 
 struct ControlFlujoView: View {
     @State private var valvePressure: Double = 1.96
-    @State private var isValveOn: Bool = false
+    @State private var isValveOpen: Bool = false
     @State private var isEditing = false
     @State private var zonaValue = 1
     
     @StateObject var valve = ValveController()
+
     
     var body: some View {
         HStack(spacing:0){
@@ -31,8 +32,18 @@ struct ControlFlujoView: View {
                                 }
                             }
                         }.padding(.vertical)
-                       
-                        
+
+                    }
+                   
+                    Section{
+                        Toggle("Control de Válvula", isOn: $isValveOpen)
+                            .onChange(of: isValveOpen) { newValue in
+                                if newValue {
+                                    valve.openValve()
+                                } else {
+                                    valve.closeValve()
+                                }
+                            }
                     }
                 }
                 .padding(0)
@@ -60,7 +71,7 @@ struct ControlFlujoView: View {
             }
             .navigationTitle("Control de Flujo")
         }
-        .background(Color("systemBackground"))
+        .background(Color("systemBackgroundGota"))
     }
 }
 

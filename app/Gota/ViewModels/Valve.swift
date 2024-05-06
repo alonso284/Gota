@@ -1,12 +1,12 @@
 import Foundation
 
-let device_address = "http://137.184.90.155:5000"
+let device_address = "http://172.20.10.11"
 
 class ValveController: ObservableObject {
     @Published var closed = true
     
     
-    func openValve() {
+    func closeValve() {
         guard let url = URL(string:  device_address + "/openValve") else {
             print("Invalid URL")
             return
@@ -24,7 +24,7 @@ class ValveController: ObservableObject {
         }.resume()
     }
     
-    func closeValve() {
+    func openValve() {
         guard let url = URL(string:  device_address + "/closeValve") else {
             print("Invalid URL")
             return

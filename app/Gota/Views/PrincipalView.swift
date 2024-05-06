@@ -22,155 +22,174 @@ struct PrincipalView: View {
         (name: "Dosa", sales: 625),
     ]
     var body: some View {
-        ZStack {
             VStack {
+                Spacer()
+                Spacer()
+                Spacer()
+                Spacer()
+                Spacer()
+                Spacer()
+                Spacer()
+                Spacer()
+                Spacer()
+                
                 HStack {
                     VStack(alignment: .leading){
-                        Spacer()
-                        Spacer()
-                        HStack {
-                            VStack(alignment: .leading) {
-                                Text("Periodo")
-                                    .font(.largeTitle)
-                                Text(String(format: "$%.2f", viewModel.total * cost_per_liter))
-                                    .font(.title)
+                        Form{
+                            Section{
+                                HStack {
+                                    Text("Periodo")
+                                        .font(.title2)
+                                    Spacer()
+                                    Text(String(format: "$%.2f", viewModel.total * cost_per_liter))
+                                        .font(.title2)
+                                }
+                                .padding()
                             }
-                            Spacer()
-                            Image("logo")
-                                .resizable()
-                                .scaledToFill()
-                                .frame(width: 17.18 * 3.6, height: 20.92 * 3.6)
-                                .padding(.trailing)
-                        }
-                        Spacer()
-                        Spacer()
-                        Divider()
-                        Spacer()
-                        Spacer()
-                        HStack {
-                            VStack(alignment: .leading) {
-                                Text("Aumento")
-                                    .font(.title)
-                                Text(String(format: "-$%.2f", viewModel.total * cost_per_liter * 0.2))
-                                    .foregroundStyle(Color.green)
+                            Section{
+                                HStack {
+                                    VStack(alignment: .leading) {
+                                        Text("Aumento")
+                                            .font(.title3)
+                                        Text(String(format: "-$%.2f", viewModel.total * cost_per_liter * 0.2))
+                                            .foregroundStyle(Color.green)
+                                    }
+                                    Spacer()
+                                    Text("-2%")
+                                        .font(.title3)
+                                        .foregroundStyle(Color.green)
+                                }
+                                .padding(.horizontal)
+                                HStack {
+                                    VStack(alignment: .leading) {
+                                        Text("Gasto por fugas")
+                                            .font(.title3)
+                                        
+                                        Text(String(format: "$%.2f", viewModel.leaked * cost_per_liter))
+                                            .foregroundStyle(Color.red)
+                                    }
+                                    Spacer()
+                                    Text(String(format: "%.2f%%", viewModel.leaked / (viewModel.total == 0 ? 1 : viewModel.total )))
+                                        .font(.title3)
+                                        .foregroundStyle(Color.red)
+                                }
+                                .padding(.horizontal)
                             }
-                            Spacer()
-                            Text("-2%")
-                                .font(.title)
-                                .foregroundStyle(Color.green)
                         }
-                        Spacer()
-                        HStack {
-                            VStack(alignment: .leading) {
-                                Text("Gasto por fugas")
-                                    .font(.title)
-                                Text(String(format: "$%.2f", viewModel.leaked * cost_per_liter))
-                            }
-                            Spacer()
-                            Text(String(format: "%.2f%%", viewModel.leaked / (viewModel.total == 0 ? 1 : viewModel.total )))
-                                .font(.title)
-                                .foregroundStyle(Color.red)
-                        }
-                        Spacer()
-                        Spacer()
+                        .scrollDisabled(true)
+                        .padding(.top)
+                        .padding(.top)
+                        .padding(.top)
+                        .padding(.top)
+                        .padding(.top)
+                        .padding(.top)
+                        .padding(.top)
+                       
                     }
-                    .padding(.vertical)
-                    .frame(width: 350)
-                    .padding()
-                    
+                    .frame(width: 400,height:400)
+                  
                     VStack {
-                        Spacer()
-                        HStack {
-                            Group {
-                                Text("Fugas detectadas")
-                                Spacer()
-                                Text("\(viewModel.nleaks)")
-                                    .bold()
+                        Form {
+                            Section{
+                                HStack {
+                                    Text("Fugas Detectadas")
+                                        .font(.title2)
+                                    Spacer()
+                                    Text(String(format:"%.2f%",viewModel.nleaks))
+                                        .font(.title2)
+                                }
+                                .padding()
+                                
+                                
                             }
-                            .font(.largeTitle)
-                        }
-                        Spacer()
-                        Spacer()
-                        Divider()
-                        Spacer()
-                        Spacer()
-                        HStack {
-                            Group {
-                                Text("Mayores")
-                                Spacer()
-                                Text("\(viewModel.nleaks)")
-                                    .bold()
+                          
+                            Section{
+                                HStack {
+                                    Text("Alta Prioridad")
+                                    Spacer()
+                                    Text("\(viewModel.nleaks)")
+                                        .bold()
+                                        .foregroundStyle(Color.red)
+                                }
+                                HStack {
+                                    Text("Media Prioridad")
+                                    Spacer()
+                                    Text("\(viewModel.nleaks)")
+                                        .bold()
+                                        .foregroundStyle(Color.orange)
+                                }
+                                HStack {
+                                    Text("Baja Prioridad")
+                                    Spacer()
+                                    Text("\(viewModel.nleaks)")
+                                        .bold()
+                                        .foregroundStyle(Color.green)
+                                }
                             }
-                            .font(.title)
-                            .foregroundStyle(Color.red)
+                            
+      
                         }
-                        Spacer()
-                        HStack {
-                            Group {
-                                Text("Mayores")
-                                Spacer()
-                                Text("\(viewModel.nleaks)")
-                                    .bold()
-                            }
-                            .font(.title)
-                            .foregroundStyle(Color.orange)
-                        }
+                        .scrollDisabled(true)
                         
-                        Spacer()
-                        HStack {
-                            Group {
-                                Text("Mayores")
-                                Spacer()
-                                Text("\(viewModel.nleaks)")
-                                    .bold()
-                            }
-                            .font(.title)
-                            .foregroundStyle(Color.green)
+                        
+                        
+                    }
+                    .padding(.top)
+                    .padding(.top)
+                    .padding(.top)
+                    .padding(.top)
+                    .padding(.top)
+                    .padding(.top)
+                    .frame(width: 500,height:380)
+                   
+                    Form{
+                        Section{
+                            SistemasTotalesComponent()
+                            GotasTotales()
                         }
                     }
-                        .padding()
-                        .padding()
-                    
-                    
-                   
-               
-                    VStack {
-                        SistemasTotalesComponent()
-                        GotasTotales()
-                    }
-                   
                     .padding(.top)
                     .padding(.top)
-                    .cornerRadius(21)
-                    .padding(.horizontal,60)
+                    .padding(.top)
+                    
+                    
+                    
+                    .scrollDisabled(true)
+                    .frame(height:220)
                 }
                 
 
                 
                 HStack {
                    // viewmodel is being sent to consumo component made
-                    ConsumoComponent(viewModel: viewModel)
-                    
-                    // fix this so i actually can visualize it
-                    VStack(alignment: .leading) {
-                        Text("Consumo en últimos 7 días")
-                            .font(.title)
-                        ZStack {
-                            Chart(self.viewModel.days, id: \.self.date) {
-                                day in
-                                AreaMark(
-                                    x: .value("Day", day.date),
-                                    y: .value("Liters", Int(day.value)%100)
-                                )
-                                .foregroundStyle(by: .value("Type", day.type))
-                            }
+                    VStack{
+                        Form{
+                            ConsumoComponent(viewModel: viewModel)
                         }
-                        
+                        .scrollDisabled(true)
+                    }.frame(width:400,height:480)
+                   
+                  
+                    VStack(alignment: .leading) {
+                        Form{
+                            WeeklyUseComponent(viewModel: viewModel)
+                        }
+                        .scrollDisabled(true)
                     }
-                    .padding()
-                    .padding()
+                    .frame(height: 480)
+                    
                 }
-                .frame(height: 350)
+                .padding(.bottom)
+                .padding(.bottom)
+                .padding(.bottom)
+                .padding(.bottom)
+                .padding(.bottom)
+                Spacer()
+                Spacer()
+                Spacer()
+                Spacer()
+                Spacer()
+                
             }
             .padding()
             .onAppear {
@@ -178,10 +197,13 @@ struct PrincipalView: View {
                 viewModel.fetchSubZoneData()
                 viewModel.fetchDays()
             }
-        }.navigationTitle("Dashboard")
+        
+        .navigationTitle("Dashboard")
+        .background(Color("systemBackgroundGota"))
     }
 }
 
 #Preview {
-    PrincipalView()
+    ContentView()
 }
+

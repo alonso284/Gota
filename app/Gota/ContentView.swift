@@ -32,7 +32,7 @@ struct ContentView: View {
             .tabItem { Label("Control de Flujo", systemImage: "pipe.and.drop.fill") }
             
             NavigationView {
-                PlanDeAhorro()
+                ControlFlujoView()
                     .navigationTitle("Plan de Ahorro")
             }
             .navigationViewStyle(StackNavigationViewStyle())
