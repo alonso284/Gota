@@ -8,67 +8,67 @@
 import SwiftUI
 
 struct PlanDeAhorroView: View {
-    @State private var speed = 50.0
-    @State private var spee2 = 50.0
+    @State private var valvePressure1: Double = 1.96
+    @State private var valvePressure2: Double = 1.96
     @State private var isEditing = false
     @StateObject private var viewModel = PredicionViewModel()
 
     var body: some View {
         HStack {
             VStack {
-                ZStack(alignment: .top) {
-                   
-                    VStack(alignment: .leading) {
-                        Text("Control de zonas para hoy")
-                            .font(.title)
-                            .bold()
-                            .padding(.vertical)
-                            .padding(.leading)
-
-                        Text("Basado en el consumo de las zonas de Nuevo Norte, es recomendable dejar en los niveles sugeridos para una mejor experiencia. Podrás efectuar cambios \ndesde esta interfaz.")
-                            .font(.title2)
-                            .foregroundColor(.secondary)
-                            .padding([.bottom])
-                            .padding(.leading)
-                            .frame(maxWidth: .infinity, alignment: .leading)
-
-                        VStack {
+                Form {
+                    Section(header:Text("Control de Flujo")){
+                        VStack(alignment:.leading) {
+                            Text("Zona 1")
+                                .font(.title3)
+                                .bold()
+                                .padding(.leading)
                             HStack {
-                                Text("Zona 1")
-                                    .fontWeight(.light)
-                                Slider(value: $speed, in: 0...100) { editing in
-                                    isEditing = editing
+                                
+                                VStack {
+                                    Text("\(String(format:"%.2f", $valvePressure1.wrappedValue)) kg/cm²").font(.system(size: 20)).frame(maxWidth: 170, alignment: .trailing)
+                                    Slider(value: $valvePressure1, in: 0...6) { editing in
+                                        isEditing = editing
+                                        
+                                    }
                                 }
                             }
                             .padding(.vertical)
-                            
-                            
+                        }
+                        VStack(alignment:.leading) {
+                            Text("Zona 2")
+                                .font(.title3)
+                                .bold()
+                                .padding(.leading)
                             HStack {
-                                Text("Zona 2")
-                                    .fontWeight(.light)
-                                Slider(value: $spee2, in: 0...100) { editing in
-                                    isEditing = editing
+                                
+                                VStack {
+                                    Text("\(String(format:"%.2f", $valvePressure2.wrappedValue)) kg/cm²").font(.system(size: 20)).frame(maxWidth: 170, alignment: .trailing)
+                                    Slider(value: $valvePressure2, in: 0...6) { editing in
+                                        isEditing = editing
+                                        
+                                    }
                                 }
                             }
-                            .padding(.bottom)
+                            .padding(.vertical)
                         }
-                        .padding(.leading)
+                           
                         
-                        HStack {
-                            Spacer()
-                            Button("Guardar cambios") {}
-                                .buttonStyle(.borderedProminent).bold()
-                        }
-                        
+
                     }
-                    
+                                        
                 }
+                .padding(EdgeInsets(top: 0, leading: 0, bottom: -10, trailing: 0))
+                .scrollDisabled(true)
 
                 VStack (alignment: .leading){
                     Text("Niveles del agua")
-                        .font(.title)
+                        .font(.title2)
                         .bold()
                         .padding(.vertical)
+               
+    
+                       
                     HStack(spacing: 20){
                         TinacoComponent(TinacoNumber: "Tinaco 01", Percentage: 30)
                         TinacoComponent(TinacoNumber: "Tinaco 02", Percentage: 50)
@@ -77,18 +77,12 @@ struct PlanDeAhorroView: View {
                     }                    
                 }
                 .frame(height: 300)
-                
-                    
-                    
+  
                     
             }
 
-            ZStack(alignment:.topLeading) {
-                VStack{
-                    Text("Notificaciones")
-                        .font(.title)
-                        .bold()
-                        .padding(.vertical)
+           Form {
+                Section(header:Text("Notificaciones")){
                     List {
                         ForEach(viewModel.sensorData.filter { $0.category == "slow" }, id: \.sensor_id) { sensor in
                             VStack (alignment: .leading){
@@ -105,12 +99,14 @@ struct PlanDeAhorroView: View {
                     }.scrollContentBackground(.hidden)
 
                 }.padding()
-            }.frame(width: 400)
+            }
+           .frame(width: 400)
         }
         .navigationTitle("Plan de Ahorro")
+        .background(Color("systemBackgroundGota"))
     }
 }
 
 #Preview {
-    PlanDeAhorroView()
+    ContentView()
 }

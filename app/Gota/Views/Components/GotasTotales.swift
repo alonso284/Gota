@@ -1,16 +1,16 @@
 //
-//  SistemasTotalesComponent.swift
+//  GotasTotales.swift
 //  Gota
 //
-//  Created by felipe ivan on 04/05/24.
+//  Created by Sofia Sandoval on 5/7/24.
 //
 
 import SwiftUI
 
-struct SistemasTotalesComponent: View {
+struct GotasTotales: View {
     var body: some View {
         HStack{
-            Text("Zonas totales")
+            Text("Gotas totales")
             Spacer()
             Text("2").foregroundStyle(Color.accentColor)
         }
@@ -18,5 +18,5 @@ struct SistemasTotalesComponent: View {
 }
 
 #Preview {
-    SistemasTotalesComponent()
+    GotasTotales()
 }

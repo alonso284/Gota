@@ -22,7 +22,10 @@ struct WeeklyUseComponent: View {
                 .foregroundStyle(by: .value("Type", day.type))
             }
         }
-        .frame(width: 600,height: 280)
+        .frame(width: 600,height: 240)
     }
 }
 
+#Preview{
+    ContentView()
+}

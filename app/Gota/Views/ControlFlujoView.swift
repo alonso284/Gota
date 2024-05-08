@@ -8,7 +8,7 @@ struct ControlFlujoView: View {
     
     @StateObject var valve = ValveController()
 
-    
+
     var body: some View {
         HStack(spacing:0){
             HStack {
@@ -20,8 +20,7 @@ struct ControlFlujoView: View {
                             Text("Torre 2").tag(3)
                         }.pickerStyle(SegmentedPickerStyle())
                     }
-                    
-                    
+
                     Section(header:Text("Nivel de presión")){
                         ZStack(alignment: .topLeading){
                             VStack(alignment: .leading){
@@ -46,7 +45,6 @@ struct ControlFlujoView: View {
                             }
                     }
                 }
-                .padding(0)
                 .scrollDisabled(true)
                     
                 
@@ -55,15 +53,14 @@ struct ControlFlujoView: View {
                         Image("GotaPlanDeAhorro")
                             .resizable()
                             .scaledToFit()
-                            .frame(width: 800, height: 280)
-                            .padding(.vertical)
+                            .frame(width: 700, height: 200)
+                            
                     }
                     
                     Section(header: Text("Detalles de tubería")) {
                         DetailView(title: "Fecha de último mantenimiento", value: "2024-02-18")
                         DetailView(title: "Fecha de instalación", value: "2024-01-01")
                         DetailView(title: "Material", value: "Cobre")
-                      
                         DetailView(title: "Prioridad", value: "1")
                     }
                 }
@@ -90,8 +87,6 @@ struct DetailView: View {
     }
 }
 
-struct PlanDeAhorroView_Previews: PreviewProvider {
-    static var previews: some View {
-        ControlFlujoView()
-    }
+#Preview{
+    ContentView()
 }

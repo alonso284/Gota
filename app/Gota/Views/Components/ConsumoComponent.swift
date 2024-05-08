@@ -27,10 +27,12 @@ struct ConsumoComponent: View {
     }
 
     var body: some View {
-        VStack(alignment: .leading) {
+        HStack{
             Text("Consumo por zona")
                 .font(.title2)
             Text("(30 días)")
+            Spacer()
+            
             ZStack {
                 Chart(viewModel.subzones, id: \.self.name) { subzone in
                     SectorMark(
@@ -44,10 +46,15 @@ struct ConsumoComponent: View {
                 }
                 Text("\(Int(self.viewModel.total / 1000)) kL")
                     .font(.system(size: 15))
-                    .padding(.bottom)
+                    .padding()
             }
         }
         .padding()
-        .frame(width: 300, height: 320)
+        .frame(width: 500,height: 280)
+
     }
+}
+
+#Preview {
+    ContentView()
 }

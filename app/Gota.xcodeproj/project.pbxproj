@@ -8,9 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		5EA7CC022BE7270B0002C206 /* SistemasTotalesComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA7CC012BE7270B0002C206 /* SistemasTotalesComponent.swift */; };
-		5EA7CC042BE72ABF0002C206 /* GotasTotales.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA7CC032BE72ABF0002C206 /* GotasTotales.swift */; };
 		A92D20372BE4634100A711D0 /* SequiaNotifComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92D20362BE4634100A711D0 /* SequiaNotifComponent.swift */; };
 		A92D20392BE4638F00A711D0 /* ConsumoComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92D20382BE4638F00A711D0 /* ConsumoComponent.swift */; };
+		A9546F442BEADBA1004F1867 /* GotasTotales.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9546F432BEADBA1004F1867 /* GotasTotales.swift */; };
+		A9546F462BEB1F4C004F1867 /* GotaComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9546F452BEB1F4C004F1867 /* GotaComponent.swift */; };
 		A96CA93D2BE852000039DA69 /* ControlFlujoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96CA93C2BE852000039DA69 /* ControlFlujoView.swift */; };
 		A96CA93F2BE865C40039DA69 /* WeeklyUseComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96CA93E2BE865C40039DA69 /* WeeklyUseComponent.swift */; };
 		FB10EA8B2B9DCBBF0087B60F /* Valve.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB10EA8A2B9DCBBF0087B60F /* Valve.swift */; };
@@ -32,9 +33,10 @@
 
 /* Begin PBXFileReference section */
 		5EA7CC012BE7270B0002C206 /* SistemasTotalesComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SistemasTotalesComponent.swift; sourceTree = "<group>"; };
-		5EA7CC032BE72ABF0002C206 /* GotasTotales.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GotasTotales.swift; sourceTree = "<group>"; };
 		A92D20362BE4634100A711D0 /* SequiaNotifComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequiaNotifComponent.swift; sourceTree = "<group>"; };
 		A92D20382BE4638F00A711D0 /* ConsumoComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsumoComponent.swift; sourceTree = "<group>"; };
+		A9546F432BEADBA1004F1867 /* GotasTotales.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GotasTotales.swift; sourceTree = "<group>"; };
+		A9546F452BEB1F4C004F1867 /* GotaComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GotaComponent.swift; sourceTree = "<group>"; };
 		A96CA93C2BE852000039DA69 /* ControlFlujoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlFlujoView.swift; sourceTree = "<group>"; };
 		A96CA93E2BE865C40039DA69 /* WeeklyUseComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyUseComponent.swift; sourceTree = "<group>"; };
 		FB1032592B9DC5BF00C9A3D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -115,8 +117,9 @@
 				A92D20362BE4634100A711D0 /* SequiaNotifComponent.swift */,
 				A92D20382BE4638F00A711D0 /* ConsumoComponent.swift */,
 				5EA7CC012BE7270B0002C206 /* SistemasTotalesComponent.swift */,
-				5EA7CC032BE72ABF0002C206 /* GotasTotales.swift */,
 				A96CA93E2BE865C40039DA69 /* WeeklyUseComponent.swift */,
+				A9546F432BEADBA1004F1867 /* GotasTotales.swift */,
+				A9546F452BEB1F4C004F1867 /* GotaComponent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -234,9 +237,10 @@
 				A92D20392BE4638F00A711D0 /* ConsumoComponent.swift in Sources */,
 				FBC26CAF2B9DA89F00C7E854 /* PlanDeAhorroView.swift in Sources */,
 				FBFD99CD2B9D729700B91A46 /* PredictionViewModel.swift in Sources */,
+				A9546F462BEB1F4C004F1867 /* GotaComponent.swift in Sources */,
 				FB4C8FE22B9D00F700D89048 /* Item.swift in Sources */,
-				5EA7CC042BE72ABF0002C206 /* GotasTotales.swift in Sources */,
 				A96CA93D2BE852000039DA69 /* ControlFlujoView.swift in Sources */,
+				A9546F442BEADBA1004F1867 /* GotasTotales.swift in Sources */,
 				FBFD99C52B9D178200B91A46 /* PrincipalViewModel.swift in Sources */,
 				FB10EA8B2B9DCBBF0087B60F /* Valve.swift in Sources */,
 				A92D20372BE4634100A711D0 /* SequiaNotifComponent.swift in Sources */,
